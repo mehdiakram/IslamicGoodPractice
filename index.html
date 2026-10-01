@@ -1,175 +1,1981 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-    <title>ইসলামী উত্তম অভ্যাস</title>
-<style>
-h1{
-    text-align: center;
-    margin-bottom: 20px;  
-}
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 992px;
-    margin: 0 auto;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
+    <title>ইসলামী উত্তম অভ্যাস | Islamic Good Practice</title>
 
-tr:nth-child(even) {
-  background-color: #dddddd4d;
-}
-</style>
+    <meta name="description"
+          content="দৈনন্দিন জীবনে ব্যবহৃত গুরুত্বপূর্ণ ইসলামী শব্দ, বাক্য, যিকির ও দোয়া অর্থ, ব্যবহার ও রেফারেন্সসহ।">
+
+    <meta name="theme-color" content="#0f766e">
+
+    <style>
+        :root {
+            --primary: #0f766e;
+            --primary-dark: #115e59;
+            --primary-light: #ccfbf1;
+
+            --bg: #f5f7f7;
+            --card: #ffffff;
+            --text: #17211f;
+            --muted: #66736f;
+            --border: #e2e8e6;
+
+            --success: #15803d;
+            --warning: #a16207;
+
+            --shadow:
+                0 10px 30px rgba(15, 118, 110, .08);
+
+            --radius: 18px;
+        }
+
+        body.dark {
+            --bg: #0d1514;
+            --card: #14201e;
+            --text: #eef8f6;
+            --muted: #a7b8b4;
+            --border: #263936;
+
+            --primary-light: #123c38;
+
+            --shadow:
+                0 10px 30px rgba(0, 0, 0, .25);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family:
+                "Noto Sans Bengali",
+                "Noto Sans",
+                Arial,
+                sans-serif;
+            line-height: 1.7;
+            transition:
+                background .25s ease,
+                color .25s ease;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 32px));
+            margin-inline: auto;
+        }
+
+        /* Hero */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    135deg,
+                    #064e3b,
+                    #0f766e 55%,
+                    #115e59
+                );
+            color: white;
+            padding: 72px 0 90px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 50%;
+            right: -130px;
+            top: -160px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 50%;
+            left: -100px;
+            bottom: -170px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 13px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.16);
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 6vw, 64px);
+            line-height: 1.15;
+            margin: 0 0 16px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            margin: 0;
+            max-width: 700px;
+            font-size: 18px;
+            color: rgba(255,255,255,.85);
+        }
+
+        /* Toolbar */
+
+        .toolbar-wrap {
+            margin-top: -35px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .toolbar {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+            padding: 18px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search {
+            flex: 1 1 300px;
+            position: relative;
+        }
+
+        .search input {
+            width: 100%;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            border-radius: 13px;
+            padding: 13px 16px;
+            outline: none;
+        }
+
+        .search input:focus {
+            border-color: var(--primary);
+        }
+
+        .filters {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn,
+        .theme-btn {
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            padding: 10px 13px;
+            border-radius: 11px;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .filter-btn:hover,
+        .theme-btn:hover,
+        .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* Intro */
+
+        .intro {
+            padding: 50px 0 20px;
+        }
+
+        .section-title {
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .section-subtitle {
+            color: var(--muted);
+            max-width: 760px;
+            margin-top: 0;
+        }
+
+        /* Cards */
+
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            padding: 25px 0 70px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .category {
+            display: inline-flex;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 999px;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .copy-btn {
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--muted);
+            padding: 6px 9px;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        .copy-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .arabic {
+            direction: rtl;
+            text-align: right;
+            font-family:
+                "Noto Naskh Arabic",
+                "Amiri",
+                "Scheherazade New",
+                serif;
+            font-size: 30px;
+            line-height: 1.8;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .transliteration {
+            color: var(--muted);
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .meaning {
+            background: var(--bg);
+            border-radius: 13px;
+            padding: 14px;
+            margin-bottom: 15px;
+        }
+
+        .meaning strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 3px;
+        }
+
+        .info {
+            margin-top: auto;
+        }
+
+        .info-row {
+            padding: 12px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .info-row strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .info-row span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .reference {
+            margin-top: 14px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .reference a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Important section */
+
+        .important {
+            margin: 10px 0 70px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 30px;
+        }
+
+        .important h2 {
+            margin-top: 0;
+        }
+
+        .notice {
+            padding: 15px 17px;
+            border-radius: 13px;
+            margin-top: 12px;
+            background: var(--bg);
+            border-left: 4px solid var(--primary);
+        }
+
+        .notice strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 35px 0;
+            color: var(--muted);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--muted);
+            grid-column: 1 / -1;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 980px) {
+            .cards {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            .container {
+                width: min(100% - 22px, 1180px);
+            }
+
+            .hero {
+                padding: 55px 0 75px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .toolbar {
+                padding: 12px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .arabic {
+                font-size: 27px;
+            }
+
+            .important {
+                padding: 22px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>ইসলামী উত্তম অভ্যাস</h1>
+<header class="hero">
 
-<table>
-  <tr>
-    <th>ইসলামী শব্দ / বাক্য</th>
-    <th>অর্থ</th>
-    <th>কখন বলতে হবে</th>
-  </tr>
+    <div class="container hero-content">
 
-  <tr>
-    <td>আসসালামু আলাইকুম<br>আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ</td>
-    <td>আপনার ওপর মহান আল্লাহর শান্তি বর্ষিত হোক</td>
-    <td>কারো সাক্ষাতে</td>
-  </tr>
+        <div class="badge">
+            দৈনন্দিন জীবনের ইসলামী উত্তম অভ্যাস
+        </div>
 
-  <tr>
-    <td>ওয়া আলাইকুমুস আসসালাম<br>ওয়া আলাইকুমুস সালাম ওয়া রহমাতুল্লাহি ওয়া বারকাতুহ</td>
-    <td>আপনার ওপরও মহান আল্লাহর শান্তি বর্ষিত হোক</td>
-    <td>সালামের প্রতিউত্তরে</td>
-  </tr>
+        <h1>ইসলামী উত্তম অভ্যাস</h1>
 
-  <tr>
-    <td>বিসমিল্লাহ</td>
-    <td>আল্লাহর নামে শুরু করলাম</td>
-    <td>ভালো কোন কিছু খাওয়া বা পান করার সময়<br>কোন কিছু লেখা বা পড়ার সময়<br>কোন কাজ শুরু করার সময়</td>
-  </tr>
+        <p>
+            দৈনন্দিন জীবনে ব্যবহৃত গুরুত্বপূর্ণ ইসলামী শব্দ,
+            বাক্য, যিকির ও দোয়া। অর্থ, কখন ব্যবহার করবেন
+            এবং প্রয়োজনীয় রেফারেন্সসহ।
+        </p>
 
-  <tr>
-    <td>আলহামদুলিল্লাহ</td>
-    <td>সব প্রশংসা মহান আল্লাহর জন্য</td>
-    <td>ভালো কিছু খাওয়া বা পান করা শেষে<br>কোন শুভ সংবাদ শোনা হলে<br>কেউ কেমন আছো জিজ্ঞেস করলে</td>
-  </tr>
+    </div>
 
-  <tr>
-    <td>ইনশাআল্লাহ<br>ইন শা আল্লাহ</td>
-    <td>মহান আল্লাহ যদি চান তাহলে</td>
-    <td>ভবিষ্যতে কিছু করবো/হবে</td>
-  </tr>
+</header>
 
-  <tr>
-    <td>মাশাআল্লাহ</td>
-    <td>আল্লাহ যেমন চেয়েছেন</td>
-    <td>অন্যের ভালো সংবাদে<br>ভালো যে কোন কিছু বেশি বা ব্যতিক্রম দেখলে</td>
-  </tr>
 
-  <tr>
-    <td>আল্লাহুম্মা বারিক লাহু</td>
-    <td>আল্লাহ আপনাকে বারাকাহ দান করুন</td>
-    <td>সুন্দর কিছু দেখলে বরকতের দুয়া হিসেবে</td>
-  </tr>
+<main>
 
-  <tr>
-    <td>নাউজুবিল্লাহ<br>না’উজু বিল্লাহ</td>
-    <td>আমরা মহান আল্লাহর কাছে এ থেকে আশ্রয় চাই</td>
-    <td>মন্দ কাজ হতে দেখলে<br>কোন বাজে কথা শুনলে<br>আল্লাহর আজাব ও গজবের কথা শুনলে বা মনে পড়লে</td>
-  </tr>
+    <div class="container toolbar-wrap">
 
-  <tr>
-    <td>আস্তাগফিরুল্লাহ</td>
-    <td>আমি মহান আল্লাহর কাছে ক্ষমা চাই</td>
-    <td>কোন গুনাহর কথা বলে ফেললে<br>গুনাহর কথা শুনলে</td>
-  </tr>
+        <div class="toolbar">
 
-  <tr>
-    <td>ইন্নালিল্লাহ<br>ইন্নালিল্লাহি ওয়া ইন্না ইলাইহি রা-জিউন</td>
-    <td>নিশ্চয়ই আমরা মহান আল্লাহর জন্য এবং আমরা তার দিকেই ফিরে যাবো</td>
-    <td>কোন বিপদের কথা শুনলে<br>কোন খারাপ বা অশুভ সংবাদ শুনলে<br>কোন কিছু হারিয়ে গেলে<br>কোন কিছু চুরি হয়ে গেলে<br>কোন কষ্ট পেলে</td>
-  </tr>
+            <div class="search">
+                <input
+                    type="search"
+                    id="search"
+                    placeholder="যিকির, অর্থ বা ব্যবহার খুঁজুন..."
+                    autocomplete="off">
+            </div>
 
-  <tr>
-    <td>লা হাওলা ওয়ালা কুওয়াতা ইল্লাবিল্লাহ</td>
-    <td>মহান আল্লাহর সাহায্য ও সহায়তা ছাড়া আর কোনো আশ্রয় ও সাহায্য নেই</td>
-    <td>আল্লাহর সাহায্যের জন্য<br>শয়তানের কোনো ওয়াসওয়াসা বা দূরভিসন্ধিমূলক কোনো প্রতারণা থেকে বাঁচার জন্য</td>
-  </tr>
+            <div class="filters">
 
-  <tr>
-    <td>জাযাকাল্লাহু<br>জাযাকাল্লাহ খায়রন</td>
-    <td>মহান আল্লাহ আপনাকে সর্বোত্তম প্রতিদান দান করুন</td>
-    <td>(পুরুষদের জন্য) কেউ আপনার কোনো উপকার করলে</td>
-  </tr>
+                <button
+                    class="filter-btn active"
+                    data-filter="all">
+                    সব
+                </button>
 
-  <tr>
-    <td>জাজাকিল্লাহু<br>জাজাকিল্লাহু খায়রন</td>
-    <td>মহান আল্লাহ আপনাকে সর্বোত্তম প্রতিদান দান করুন</td>
-    <td>(মহিলাদের জন্য) কেউ আপনার কোনো উপকার করলে</td>
-  </tr>
+                <button
+                    class="filter-btn"
+                    data-filter="daily">
+                    দৈনন্দিন
+                </button>
 
-  <tr>
-    <td>ওয়া আনতুম ফা- জাযাকুমুল্লাহু খাইরন</td>
-    <td>মহান আল্লাহ আপনাকেও সর্বোত্তম প্রতিদান দান করুন</td>
-    <td>জাজাকাল্লাহু/জাজাকিল্লাহু খাইরন এর উত্তরে বলতে হয়</td>
-  </tr>
+                <button
+                    class="filter-btn"
+                    data-filter="zikr">
+                    যিকির
+                </button>
 
-  <tr>
-    <td>বারাকাল্লাহু ফিক</td>
-    <td>আল্লাহ আপনাকে বারাকাহ দান করুন</td>
-    <td>বরকতের দুয়া হিসেবে</td>
-  </tr>
+                <button
+                    class="filter-btn"
+                    data-filter="dua">
+                    দোয়া
+                </button>
 
-  <tr>
-    <td>ছুম্মা আমিন</td>
-    <td>হে আল্লাহ কবুল করে নাও</td>
-    <td>আল্লাহ তা'লার নিকট কোন দোয়া চাওয়ার পর</td>
-  </tr>  
+                <button
+                    class="filter-btn"
+                    data-filter="response">
+                    উত্তর
+                </button>
 
-  <tr>
-    <td>ওয়াল্লাহি<br>বিল্লাহি<br>তাল্লাহি</td>
-    <td>আল্লাহর নামে শপথ করে বলছি</td>
-    <td>কোন কিছুর জন্য শপথ/কসম করতে</td>
-  </tr>  
+                <button
+                    class="filter-btn"
+                    data-filter="special">
+                    বিশেষ পরিস্থিতি
+                </button>
 
-  <tr>
-    <td>ফি আমানিল্লাহ</td>
-    <td>আপনাকে আল্লাহর নিরাপত্তায় দিয়ে দিলাম, তিনি যেন আপনাকে নিরাপদে রাখেন</td>
-    <td>কারো কাছ থেকে বিদায় নেয়ার</td>
-  </tr>
+                <button
+                    class="theme-btn"
+                    id="themeToggle">
+                    Dark
+                </button>
 
-  <tr>
-    <td>আলহামদুলিল্লাহ আলা কুল্লি হাল</td>
-    <td>সর্ব অবস্থায় আমি আল্লাহর শুকরিয়া আদায় করছি</td>
-    <td>কারো হাঁচি আসলে</td>
+            </div>
 
-  </tr>
+        </div>
 
-  <tr>
-    <td>ইয়ারহামুকাল্লাহ</td>
-    <td>আল্লাহ আপনার উপর রহম (করুণা) করুন</td>
-    <td>কোন হাঁচি দাতা ‘আলহামদুলিল্লাহ’ বলতে শুনলে</td>
-  </tr>
+    </div>
 
-  <tr>
-    <td>আল্লাহু আকবার</td>
-    <td>আল্লাহ মহান</td>
-    <td>উপরে উঠার সময়<br>আল্লাহ তা’আলার শ্রেষ্ঠত্ব<br>মহত্ব বা বড়ত্বের কোন কৃতিত্ব দেখলে বা শুনলে<br>কোন বিজয় লাভ করলে<br>বিজয় লাভের আশায় শ্লোগান দিলে</td>
 
-  </tr>
+    <section class="intro container">
 
-  <tr>
-    <td>সুবহানাল্লাহ</td>
-    <td>আল্লাহ পবিত্র ও সুমহান</td>
-    <td>নিচে নামার সময়<br>সৃষ্টির কোনো ভালো ও আশ্চর্যজনক বিষয় শুনে-দেখে</td>
-  </tr>
-</table>
+        <h2 class="section-title">
+            কোন পরিস্থিতিতে কী বলবেন?
+        </h2>
+
+        <p class="section-subtitle">
+            ইসলামী বাক্য শুধু মুখে বলার বিষয় নয়। অর্থ বুঝে,
+            যথাযথ পরিস্থিতিতে এবং আন্তরিকতার সঙ্গে বলা
+            উত্তম।
+        </p>
+
+    </section>
+
+
+    <section class="container">
+
+        <div class="cards" id="cards">
+
+
+            <!-- 01 -->
+
+            <article class="card"
+                     data-category="daily"
+                     data-search="বিসমিল্লাহ আল্লাহর নামে কাজ শুরু খাবার">
+
+                <div class="card-top">
+                    <span class="category">দৈনন্দিন</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    بِسْمِ اللهِ
+                </div>
+
+                <div class="transliteration">
+                    বিসমিল্লাহ
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহর নামে।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            ভালো কোনো কাজ শুরু করার সময়,
+                            বিশেষ করে খাবার ও পানীয় গ্রহণের আগে।
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <strong>মনে রাখুন</strong>
+                        <span>
+                            কাজের শুরুতে আল্লাহর নাম স্মরণ করার
+                            একটি গুরুত্বপূর্ণ অভ্যাস।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    হাদিস: সহিহ বুখারি, সহিহ মুসলিম
+                </div>
+
+            </article>
+
+
+            <!-- 02 -->
+
+            <article class="card"
+                     data-category="zikr"
+                     data-search="আলহামদুলিল্লাহ প্রশংসা কৃতজ্ঞতা">
+
+                <div class="card-top">
+                    <span class="category">যিকির</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    الْحَمْدُ لِلَّهِ
+                </div>
+
+                <div class="transliteration">
+                    আলহামদুলিল্লাহ
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    সমস্ত প্রশংসা আল্লাহর জন্য।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            ভালো সংবাদ পেলে, কোনো নিয়ামত পেলে,
+                            খাবার শেষে, সুস্থতা বা সফলতার জন্য
+                            আল্লাহর শুকরিয়া আদায় করতে।
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <strong>উদাহরণ</strong>
+                        <span>
+                            আলহামদুলিল্লাহ, আজ আমার কাজটি ভালোভাবে
+                            সম্পন্ন হয়েছে।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আল-ফাতিহা ১:২
+                </div>
+
+            </article>
+
+
+            <!-- 03 -->
+
+            <article class="card"
+                     data-category="zikr"
+                     data-search="সুবহানাল্লাহ পবিত্র মহিমান্বিত আশ্চর্য">
+
+                <div class="card-top">
+                    <span class="category">যিকির</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    سُبْحَانَ اللهِ
+                </div>
+
+                <div class="transliteration">
+                    সুবহানাল্লাহ
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহ পবিত্র ও মহিমান্বিত।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            আল্লাহর মহত্ত্ব ও সৃষ্টির বিস্ময়কর
+                            নিদর্শন দেখে বা শুনে।
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <strong>আরও একটি ব্যবহার</strong>
+                        <span>
+                            এটি নিয়মিত যিকির হিসেবেও পড়া যায়।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আল-ইসরা ১৭:৪৪
+                </div>
+
+            </article>
+
+
+            <!-- 04 -->
+
+            <article class="card"
+                     data-category="zikr"
+                     data-search="আল্লাহু আকবার আল্লাহ মহান বড়ত্ব">
+
+                <div class="card-top">
+                    <span class="category">যিকির</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    اللهُ أَكْبَرُ
+                </div>
+
+                <div class="transliteration">
+                    আল্লাহু আকবার
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহ সর্বশ্রেষ্ঠ / আল্লাহ মহান।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            আল্লাহর বড়ত্ব প্রকাশে, নামাজে এবং
+                            বিভিন্ন ইবাদতের সময়।
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <strong>বিশেষভাবে</strong>
+                        <span>
+                            আজান, নামাজ এবং ঈদের তাকবিরে
+                            এটি গুরুত্বপূর্ণ।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আল-বাকারা ২:১৮৫
+                </div>
+
+            </article>
+
+
+            <!-- 05 -->
+
+            <article class="card"
+                     data-category="zikr"
+                     data-search="লা ইলাহা ইল্লাল্লাহ তাওহিদ">
+
+                <div class="card-top">
+                    <span class="category">তাওহিদ</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    لَا إِلٰهَ إِلَّا اللهُ
+                </div>
+
+                <div class="transliteration">
+                    লা ইলাহা ইল্লাল্লাহ
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহ ছাড়া কোনো সত্য উপাস্য নেই।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            তাওহিদের ঘোষণা হিসেবে এবং
+                            নিয়মিত যিকিরের অংশ হিসেবে।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা মুহাম্মদ ৪৭:১৯
+                </div>
+
+            </article>
+
+
+            <!-- 06 -->
+
+            <article class="card"
+                     data-category="daily"
+                     data-search="ইনশাআল্লাহ ভবিষ্যৎ কাজ আল্লাহ চাইলে">
+
+                <div class="card-top">
+                    <span class="category">দৈনন্দিন</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    إِنْ شَاءَ اللهُ
+                </div>
+
+                <div class="transliteration">
+                    ইন শা আল্লাহ / ইনশাআল্লাহ
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহ চাইলে।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            ভবিষ্যতে কোনো কাজ করার কথা বললে।
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <strong>উদাহরণ</strong>
+                        <span>
+                            আমি আগামীকাল আপনার সঙ্গে দেখা করব,
+                            ইনশাআল্লাহ।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আল-কাহফ ১৮:২৩–২৪
+                </div>
+
+            </article>
+
+
+            <!-- 07 -->
+
+            <article class="card"
+                     data-category="daily"
+                     data-search="মাশাআল্লাহ ভালো সুন্দর প্রশংসা">
+
+                <div class="card-top">
+                    <span class="category">প্রশংসা</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    مَا شَاءَ اللهُ
+                </div>
+
+                <div class="transliteration">
+                    মাশাআল্লাহ
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহ যা চেয়েছেন / আল্লাহর ইচ্ছায়।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            কারও ভালো কিছু দেখে প্রশংসা করার সময়
+                            বা কোনো সুন্দর নিয়ামত দেখে।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আল-কাহফ ১৮:৩৯
+                </div>
+
+            </article>
+
+
+            <!-- 08 -->
+
+            <article class="card"
+                     data-category="dua"
+                     data-search="আল্লাহুম্মা বারিক বরকত">
+
+                <div class="card-top">
+                    <span class="category">দোয়া</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    اللَّهُمَّ بَارِكْ
+                </div>
+
+                <div class="transliteration">
+                    আল্লাহুম্মা বারিক
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    হে আল্লাহ, বরকত দান করুন।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            কারও কোনো নিয়ামত বা ভালো কিছু দেখে
+                            তার জন্য বরকতের দোয়া করতে।
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <strong>উদাহরণ</strong>
+                        <span>
+                            মাশাআল্লাহ, আল্লাহুম্মা বারিক।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    হাদিসের আলোকে বরকতের দোয়া
+                </div>
+
+            </article>
+
+
+            <!-- 09 -->
+
+            <article class="card"
+                     data-category="zikr"
+                     data-search="আস্তাগফিরুল্লাহ ক্ষমা গুনাহ তওবা">
+
+                <div class="card-top">
+                    <span class="category">তওবা</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    أَسْتَغْفِرُ اللهَ
+                </div>
+
+                <div class="transliteration">
+                    আস্তাগফিরুল্লাহ
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আমি আল্লাহর কাছে ক্ষমা প্রার্থনা করছি।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            গুনাহ বা ভুল হয়ে গেলে, তওবা করার সময়
+                            এবং নিয়মিত ইস্তিগফারের জন্য।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা নূহ ৭১:১০
+                </div>
+
+            </article>
+
+
+            <!-- 10 -->
+
+            <article class="card"
+                     data-category="special"
+                     data-search="ইন্নালিল্লাহি ওয়া ইন্না ইলাইহি রাজিউন বিপদ মৃত্যু ক্ষতি">
+
+                <div class="card-top">
+                    <span class="category">বিপদ</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ
+                </div>
+
+                <div class="transliteration">
+                    ইন্না লিল্লাহি ওয়া ইন্না ইলাইহি রাজিউন
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    নিশ্চয়ই আমরা আল্লাহরই এবং
+                    নিশ্চয়ই তাঁর কাছেই ফিরে যাব।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            মৃত্যু, বড় বিপদ, ক্ষতি বা কোনো
+                            মুসিবতের সংবাদ পেলে।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আল-বাকারা ২:১৫৬
+                </div>
+
+            </article>
+
+
+            <!-- 11 -->
+
+            <article class="card"
+                     data-category="special"
+                     data-search="লা হাওলা ওয়ালা কুওয়াতা শক্তি সাহায্য">
+
+                <div class="card-top">
+                    <span class="category">যিকির</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ
+                </div>
+
+                <div class="transliteration">
+                    লা হাওলা ওয়ালা কুওয়াতা ইল্লা বিল্লাহ
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহ ছাড়া কোনো শক্তি ও সামর্থ্য নেই।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            কঠিন পরিস্থিতিতে আল্লাহর সাহায্যের
+                            ওপর নির্ভরতা প্রকাশ করতে এবং নিয়মিত
+                            যিকির হিসেবে।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    সহিহ বুখারি, সহিহ মুসলিম
+                </div>
+
+            </article>
+
+
+            <!-- 12 -->
+
+            <article class="card"
+                     data-category="special"
+                     data-search="আউযুবিল্লাহ শয়তান খারাপ চিন্তা আশ্রয়">
+
+                <div class="card-top">
+                    <span class="category">আশ্রয়</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    أَعُوذُ بِاللهِ
+                </div>
+
+                <div class="transliteration">
+                    আউযুবিল্লাহ
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আমি আল্লাহর কাছে আশ্রয় চাই।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            শয়তানের কুমন্ত্রণা, খারাপ চিন্তা বা
+                            অশুভ বিষয় থেকে আল্লাহর আশ্রয় চাইতে।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আন-নাহল ১৬:৯৮
+                </div>
+
+            </article>
+
+
+            <!-- 13 -->
+
+            <article class="card"
+                     data-category="response"
+                     data-search="সালাম আসসালামু আলাইকুম শান্তি">
+
+                <div class="card-top">
+                    <span class="category">সালাম</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    السَّلَامُ عَلَيْكُمْ
+                </div>
+
+                <div class="transliteration">
+                    আসসালামু আলাইকুম
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আপনাদের ওপর শান্তি বর্ষিত হোক।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            মুসলিম ভাই বা বোনের সঙ্গে সাক্ষাতের সময়
+                            সালাম দেওয়ার জন্য।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আন-নিসা ৪:৮৬
+                </div>
+
+            </article>
+
+
+            <!-- 14 -->
+
+            <article class="card"
+                     data-category="response"
+                     data-search="ওয়া আলাইকুমুস সালাম সালামের উত্তর">
+
+                <div class="card-top">
+                    <span class="category">সালামের উত্তর</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    وَعَلَيْكُمُ السَّلَامُ
+                </div>
+
+                <div class="transliteration">
+                    ওয়া আলাইকুমুস সালাম
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আপনাদের ওপরও শান্তি বর্ষিত হোক।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            কেউ সালাম দিলে তার উত্তরে।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আন-নিসা ৪:৮৬
+                </div>
+
+            </article>
+
+
+            <!-- 15 -->
+
+            <article class="card"
+                     data-category="response"
+                     data-search="জাযাকাল্লাহু খাইরান উপকার ধন্যবাদ">
+
+                <div class="card-top">
+                    <span class="category">কৃতজ্ঞতা</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    جَزَاكَ اللهُ خَيْرًا
+                </div>
+
+                <div class="transliteration">
+                    জাযাকাল্লাহু খাইরান
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহ আপনাকে উত্তম প্রতিদান দিন।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            কেউ আপনার উপকার বা ভালো কিছু করলে
+                            তার জন্য দোয়া হিসেবে।
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <strong>নারীর ক্ষেত্রে</strong>
+                        <span>
+                            জাযাকিল্লাহু খাইরান।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    জামে আত-তিরমিজি
+                </div>
+
+            </article>
+
+
+            <!-- 16 -->
+
+            <article class="card"
+                     data-category="response"
+                     data-search="আমিন দোয়া কবুল">
+
+                <div class="card-top">
+                    <span class="category">দোয়া</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    آمِين
+                </div>
+
+                <div class="transliteration">
+                    আমীন
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    হে আল্লাহ, কবুল করুন।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            নিজের বা অন্যের দোয়ার শেষে।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    দোয়ার সমাপ্তিতে প্রচলিত ইসলামী বাক্য
+                </div>
+
+            </article>
+
+
+            <!-- 17 -->
+
+            <article class="card"
+                     data-category="response"
+                     data-search="ইয়ারহামুকাল্লাহ হাঁচি">
+
+                <div class="card-top">
+                    <span class="category">হাঁচি</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    يَرْحَمُكَ اللهُ
+                </div>
+
+                <div class="transliteration">
+                    ইয়ারহামুকাল্লাহ
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহ আপনার প্রতি রহম করুন।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            কোনো মুসলিম হাঁচি দিয়ে
+                            আলহামদুলিল্লাহ বললে।
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <strong>এর পর</strong>
+                        <span>
+                            হাঁচিদাতা জবাবে বলতে পারেন:
+                            يَهْدِيكُمُ اللهُ وَيُصْلِحُ بَالَكُمْ
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    সহিহ বুখারি
+                </div>
+
+            </article>
+
+
+            <!-- 18 -->
+
+            <article class="card"
+                     data-category="zikr"
+                     data-search="সুবহানাল্লাহি ওয়া বিহামদিহি">
+
+                <div class="card-top">
+                    <span class="category">যিকির</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    سُبْحَانَ اللهِ وَبِحَمْدِهِ
+                </div>
+
+                <div class="transliteration">
+                    সুবহানাল্লাহি ওয়া বিহামদিহি
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহ পবিত্র এবং তাঁরই প্রশংসা।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            নিয়মিত যিকির হিসেবে বলা যায়।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    সহিহ বুখারি, সহিহ মুসলিম
+                </div>
+
+            </article>
+
+
+            <!-- 19 -->
+
+            <article class="card"
+                     data-category="zikr"
+                     data-search="সুবহানাল্লাহি ওয়া বিহামদিহি সুবহানাল্লাহিল আজিম">
+
+                <div class="card-top">
+                    <span class="category">যিকির</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    سُبْحَانَ اللهِ وَبِحَمْدِهِ،
+                    سُبْحَانَ اللهِ الْعَظِيمِ
+                </div>
+
+                <div class="transliteration">
+                    সুবহানাল্লাহি ওয়া বিহামদিহি,
+                    সুবহানাল্লাহিল আজিম
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহ পবিত্র ও তাঁর প্রশংসা করি;
+                    মহান আল্লাহ পবিত্র।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            নিয়মিত যিকির হিসেবে।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    সহিহ বুখারি, সহিহ মুসলিম
+                </div>
+
+            </article>
+
+
+            <!-- 20 -->
+
+            <article class="card"
+                     data-category="dua"
+                     data-search="হাসবুনাল্লাহু ওয়া নিমাল ওয়াকিল আল্লাহর ওপর ভরসা">
+
+                <div class="card-top">
+                    <span class="category">তাওয়াক্কুল</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    حَسْبُنَا اللهُ وَنِعْمَ الْوَكِيلُ
+                </div>
+
+                <div class="transliteration">
+                    হাসবুনাল্লাহু ওয়া নি'মাল ওয়াকিল
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আমাদের জন্য আল্লাহই যথেষ্ট,
+                    আর তিনি কতই না উত্তম কর্মবিধায়ক।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            ভয়, দুশ্চিন্তা বা কঠিন পরিস্থিতিতে
+                            আল্লাহর ওপর ভরসা প্রকাশ করতে।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আলে ইমরান ৩:১৭৩
+                </div>
+
+            </article>
+
+
+            <!-- 21 -->
+
+            <article class="card"
+                     data-category="dua"
+                     data-search="রব্বি জিদনি ইলমা জ্ঞান পড়াশোনা">
+
+                <div class="card-top">
+                    <span class="category">জ্ঞান</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    رَبِّ زِدْنِي عِلْمًا
+                </div>
+
+                <div class="transliteration">
+                    রব্বি যিদনী ইলমা
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    হে আমার রব, আমার জ্ঞান বৃদ্ধি করুন।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            পড়াশোনা বা জ্ঞান অর্জনের সময়
+                            আল্লাহর কাছে জ্ঞান বৃদ্ধির জন্য।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা ত্ব-হা ২০:১১৪
+                </div>
+
+            </article>
+
+
+            <!-- 22 -->
+
+            <article class="card"
+                     data-category="daily"
+                     data-search="সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম নবী">
+
+                <div class="card-top">
+                    <span class="category">নবী ﷺ</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ
+                </div>
+
+                <div class="transliteration">
+                    সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহ তাঁর ওপর শান্তি ও রহমত বর্ষণ করুন।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            নবী মুহাম্মদ ﷺ-এর নাম উল্লেখ বা
+                            শোনার সময় দরুদ পাঠ করা।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আল-আহযাব ৩৩:৫৬
+                </div>
+
+            </article>
+
+
+            <!-- 23 -->
+
+            <article class="card"
+                     data-category="daily"
+                     data-search="আল্লাহুম্মা সল্লি আলা মুহাম্মাদ দরুদ">
+
+                <div class="card-top">
+                    <span class="category">দরুদ</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ
+                </div>
+
+                <div class="transliteration">
+                    আল্লাহুম্মা সাল্লি আলা মুহাম্মাদ
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    হে আল্লাহ, মুহাম্মদ ﷺ-এর ওপর রহমত বর্ষণ করুন।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            নবী ﷺ-এর ওপর দরুদ পাঠের সময়।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আল-আহযাব ৩৩:৫৬
+                </div>
+
+            </article>
+
+
+            <!-- 24 -->
+
+            <article class="card"
+                     data-category="daily"
+                     data-search="আলহামদুলিল্লাহ ভালো আছি কেমন আছেন">
+
+                <div class="card-top">
+                    <span class="category">দৈনন্দিন</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    الْحَمْدُ لِلَّهِ
+                </div>
+
+                <div class="transliteration">
+                    আলহামদুলিল্লাহ
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    সমস্ত প্রশংসা আল্লাহর জন্য।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>উদাহরণ</strong>
+                        <span>
+                            কেউ জিজ্ঞেস করল, কেমন আছেন?
+                            উত্তর দিতে পারেন: আলহামদুলিল্লাহ, ভালো আছি।
+                        </span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 25 -->
+
+            <article class="card"
+                     data-category="special"
+                     data-search="ওয়াল্লাহি বিল্লাহি তাল্লাহি শপথ কসম">
+
+                <div class="card-top">
+                    <span class="category">সতর্কতা</span>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <div class="arabic">
+                    وَاللهِ
+                </div>
+
+                <div class="transliteration">
+                    ওয়াল্লাহি
+                </div>
+
+                <div class="meaning">
+                    <strong>অর্থ</strong>
+                    আল্লাহর কসম।
+                </div>
+
+                <div class="info">
+
+                    <div class="info-row">
+                        <strong>কখন বলবেন?</strong>
+                        <span>
+                            প্রয়োজন ছাড়া কসম করা উচিত নয়।
+                            মিথ্যা কসম করা গুরুতর গুনাহ।
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <strong>বিশেষ সতর্কতা</strong>
+                        <span>
+                            কথার জোর বাড়ানোর জন্য অভ্যাসগতভাবে
+                            আল্লাহর নামে কসম করবেন না।
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="reference">
+                    কুরআন: সূরা আল-বাকারা ২:২২৪
+                </div>
+
+            </article>
+
+
+            <div class="no-results" id="noResults">
+                কোনো ফলাফল পাওয়া যায়নি।
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Important -->
+
+    <section class="container">
+
+        <div class="important">
+
+            <h2>কিছু গুরুত্বপূর্ণ বিষয়</h2>
+
+            <div class="notice">
+                <strong>অর্থ বুঝে বলুন</strong>
+                শুধু মুখস্থ করে বলার চেয়ে অর্থ বুঝে এবং
+                অন্তর থেকে বলা উত্তম।
+            </div>
+
+            <div class="notice">
+                <strong>মাশাআল্লাহ ও আল্লাহুম্মা বারিক</strong>
+                কারও ভালো কিছু দেখে শুধু প্রশংসা না করে
+                তার জন্য বরকতের দোয়া করাও সুন্দর অভ্যাস।
+            </div>
+
+            <div class="notice">
+                <strong>ইনশাআল্লাহ</strong>
+                ভবিষ্যতের কোনো কাজের কথা বলার সময়
+                আল্লাহর ইচ্ছার ওপর নির্ভরতার অর্থে ব্যবহার করুন।
+            </div>
+
+            <div class="notice">
+                <strong>ইন্না লিল্লাহ</strong>
+                শুধু কারও মৃত্যুর সংবাদে নয়, বরং মুসিবত,
+                ক্ষতি বা বিপদের সময়ও বলা যায়।
+            </div>
+
+            <div class="notice">
+                <strong>আল্লাহর নামে কসম</strong>
+                ওয়াল্লাহি, বিল্লাহি, তাল্লাহি ইত্যাদি
+                অপ্রয়োজনে ব্যবহার করা উচিত নয়।
+            </div>
+
+            <div class="notice">
+                <strong>সঠিক উচ্চারণ শেখা জরুরি</strong>
+                আরবি বাক্য উচ্চারণের ক্ষেত্রে সম্ভব হলে
+                নির্ভরযোগ্য আলেম বা আরবি শিক্ষকের কাছ থেকে
+                উচ্চারণ যাচাই করুন।
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="container">
+
+        <strong>ইসলামী উত্তম অভ্যাস</strong>
+
+        <br>
+
+        আল্লাহ আমাদেরকে জ্ঞান অনুযায়ী আমল করার
+        এবং উত্তম চরিত্র অর্জনের তাওফিক দিন। আমীন।
+
+        <br><br>
+
+        <small>
+            এই ওয়েবসাইটটি শিক্ষামূলক উদ্দেশ্যে তৈরি।
+            ফিকহ বা আকিদার জটিল বিষয়ে বিজ্ঞ আলেমের পরামর্শ নিন।
+        </small>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    const cards =
+        [...document.querySelectorAll(".card")];
+
+    const search =
+        document.getElementById("search");
+
+    const buttons =
+        [...document.querySelectorAll(".filter-btn")];
+
+    const noResults =
+        document.getElementById("noResults");
+
+    let activeFilter = "all";
+
+
+    function filterCards() {
+
+        const query =
+            search.value
+                .trim()
+                .toLowerCase();
+
+        let visible = 0;
+
+        cards.forEach(card => {
+
+            const category =
+                card.dataset.category || "";
+
+            const text =
+                card.dataset.search.toLowerCase();
+
+            const matchesFilter =
+                activeFilter === "all" ||
+                category === activeFilter;
+
+            const matchesSearch =
+                !query ||
+                text.includes(query) ||
+                card.innerText
+                    .toLowerCase()
+                    .includes(query);
+
+            if (
+                matchesFilter &&
+                matchesSearch
+            ) {
+
+                card.style.display = "";
+
+                visible++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+        noResults.style.display =
+            visible ? "none" : "block";
+    }
+
+
+    search.addEventListener(
+        "input",
+        filterCards
+    );
+
+
+    buttons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                buttons.forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+                button.classList.add("active");
+
+                activeFilter =
+                    button.dataset.filter;
+
+                filterCards();
+
+            }
+        );
+
+    });
+
+
+    /* Copy */
+
+    document.querySelectorAll(".copy-btn")
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                async () => {
+
+                    const card =
+                        button.closest(".card");
+
+                    const arabic =
+                        card.querySelector(".arabic")
+                            ?.innerText
+                            .trim();
+
+                    const transliteration =
+                        card.querySelector(".transliteration")
+                            ?.innerText
+                            .trim();
+
+                    const meaning =
+                        card.querySelector(".meaning")
+                            ?.innerText
+                            .trim();
+
+                    const text =
+                        `${arabic}\n${transliteration}\n${meaning}`;
+
+                    try {
+
+                        await navigator.clipboard.writeText(text);
+
+                        const old =
+                            button.innerText;
+
+                        button.innerText =
+                            "Copied";
+
+                        setTimeout(() => {
+                            button.innerText = old;
+                        }, 1200);
+
+                    } catch (error) {
+
+                        alert(
+                            "কপি করা সম্ভব হয়নি।"
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* Dark mode */
+
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+    const savedTheme =
+        localStorage.getItem("islamic-theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark");
+
+        themeToggle.innerText =
+            "Light";
+
+    }
+
+
+    themeToggle.addEventListener(
+        "click",
+        () => {
+
+            document.body.classList.toggle("dark");
+
+            const dark =
+                document.body.classList.contains("dark");
+
+            localStorage.setItem(
+                "islamic-theme",
+                dark ? "dark" : "light"
+            );
+
+            themeToggle.innerText =
+                dark ? "Light" : "Dark";
+
+        }
+    );
+
+
+</script>
+
 </body>
 </html>
